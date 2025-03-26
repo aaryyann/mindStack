@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.days-one-regular {
+    font-family: "Days One", serif;
+}
