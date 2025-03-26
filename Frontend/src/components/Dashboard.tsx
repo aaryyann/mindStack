@@ -14,10 +14,13 @@ import {useContent} from "./customHooks/useContent";
 export const Dashboard = () => {
   const [modalOpen , setModalOpen] = useState(false)
   const {data , refreshContent , error , isLoading} =  useContent()
-
+  console.log("h")
   useEffect(() => {
     refreshContent()
-  } ,[refreshContent])
+    console.log("E")
+    
+  } ,[])
+
   //   try {
   //     const response = await axios.post("http://localhost:3000/api/v1/brain/share", 
   //       { share: true },
@@ -43,7 +46,7 @@ export const Dashboard = () => {
         refreshContent = {refreshContent}
       />
       <div className="min-h-screen bg-gray-900">
-        <nav className="bg-white shadow-sm fixed w-full bg-black">
+        <nav className="shadow-sm fixed w-full bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-16">
               <div className="flex items-center">

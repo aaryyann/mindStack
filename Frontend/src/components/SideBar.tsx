@@ -6,7 +6,7 @@ import { SidebarItems } from "./SidebarItems"
 export  const Sidebar = () => {
     return(
         <>
-        <div className={"w-[120%] border-r-2 bg-white h-screen bg-gray-900"}>
+        <div className={"w-[120%] border-r-2 h-screen bg-gray-900"}>
             <div className="h-screen ml-3">
             <div className="p-3">
                 <SidebarItems icon={<ArrowRightLeft/>} iconName="All"/>

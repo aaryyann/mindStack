@@ -41,7 +41,6 @@ let random = (len) => {
     }
     return result;
 };
-console.log(process.env.MongoDB_URL);
 app.post("/api/v1/signup", function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         const validUser = zod_1.default.object({
