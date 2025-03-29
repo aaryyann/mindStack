@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { Mail, Lock, User } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import dotenv from "dotenv"
+dotenv.config()
+
+
+const BACKEND_URL = process.env.BACKEND_URL
 
 interface AuthProps {
   onClose: () => void;
@@ -18,7 +23,7 @@ export function Signup({ onClose, toggleMode }: AuthProps) {
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true)
-    await axios.post("http://localhost:3000/api/v1/signup" , {
+    await axios.post(`${BACKEND_URL}/api/v1/signup` , {
       name : name,
       email : email,
       password : password,

@@ -3,6 +3,11 @@ import { motion } from "framer-motion";
 import { Share2, Twitter, Youtube, FileText, Trash2, Link2, Instagram } from "lucide-react";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
+import dotenv from "dotenv"
+dotenv.config()
+
+
+const BACKEND_URL = process.env.BACKEND_URL
 
 interface CardProps {
   title: string;
@@ -19,7 +24,7 @@ const Card = ({ link, title, type, description , refreshContent }: CardProps) =>
       await axios.request(
         {
           method: "DELETE",
-          url: "http://localhost:3000/api/v1/content",
+          url: `${BACKEND_URL}/api/v1/content`,
           data: {title: title },
           withCredentials: true
         }

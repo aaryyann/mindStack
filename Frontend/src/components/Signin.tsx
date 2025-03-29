@@ -3,6 +3,11 @@ import { Mail, Lock} from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import dotenv from "dotenv"
+dotenv.config()
+
+
+const BACKEND_URL = process.env.BACKEND_URL
 
 interface AuthProps {
     onClose: () => void;
@@ -31,7 +36,7 @@ export function Signin({ onClose, toggleMode }: AuthProps) {
         setLoading(true)
 
         try {
-            const response : responseProps = await axios.post("http://localhost:3000/api/v1/signin", {
+            const response : responseProps = await axios.post(`${BACKEND_URL}/api/v1/signin`, {
                 email: email,
                 password: password
             })

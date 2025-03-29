@@ -1,5 +1,10 @@
 import axios from "axios"
 import { useCallback, useState } from "react"
+import dotenv from "dotenv"
+dotenv.config()
+
+
+const BACKEND_URL = process.env.BACKEND_URL
 
 interface contentTypeProps {
     title: string,
@@ -26,7 +31,7 @@ export function useContent() {
         try {
 
             
-            const response: responseProps = await axios.get("http://localhost:3000/api/v1/content", {
+            const response: responseProps = await axios.get(`${BACKEND_URL}api/v1/content`, {
                 withCredentials: true
             })
 

@@ -2,6 +2,11 @@ import axios from "axios";
 import { Captions, Link2, Scan } from "lucide-react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import dotenv from "dotenv"
+dotenv.config()
+
+
+const BACKEND_URL = process.env.BACKEND_URL
 
 
 
@@ -28,7 +33,7 @@ export const CreateContentModal = ({ open, onClose, refreshContent }: ContentMod
         setLoading(false)
         return
       }
-      await axios.post("http://localhost:3000/api/v1/content", {
+      await axios.post(`${BACKEND_URL}/api/v1/content`, {
         title: title,
         link: link,
         type: contentType,
