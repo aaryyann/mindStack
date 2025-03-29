@@ -4,7 +4,6 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 
-const BACKEND_URL = import.meta.env.BACKEND_URL
 
 
 
@@ -31,7 +30,7 @@ export const CreateContentModal = ({ open, onClose, refreshContent }: ContentMod
         setLoading(false)
         return
       }
-      await axios.post(`${BACKEND_URL}/api/v1/content`, {
+      await axios.post(`/api/v1/content`, {
         title: title,
         link: link,
         type: contentType,

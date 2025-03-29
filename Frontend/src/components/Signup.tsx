@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 
 
-const BACKEND_URL = import.meta.env.BACKEND_URL
+
 
 interface AuthProps {
   onClose: () => void;
@@ -22,7 +22,7 @@ export function Signup({ onClose, toggleMode }: AuthProps) {
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true)
-    await axios.post(`${BACKEND_URL}/api/v1/signup` , {
+    await axios.post(`/api/v1/signup` , {
       name : name,
       email : email,
       password : password,

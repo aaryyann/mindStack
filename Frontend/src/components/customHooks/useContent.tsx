@@ -3,8 +3,6 @@ import { useCallback, useState } from "react"
 
 
 
-const BACKEND_URL = import.meta.env.BACKEND_URL
-
 interface contentTypeProps {
     title: string,
     link: string,
@@ -30,7 +28,7 @@ export function useContent() {
         try {
 
             
-            const response: responseProps = await axios.get(`${BACKEND_URL}/api/v1/content`, {
+            const response: responseProps = await axios.get(`/api/v1/content`, {
                 withCredentials: true
             })
 

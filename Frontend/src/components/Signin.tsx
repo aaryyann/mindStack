@@ -5,9 +5,6 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 
-
-const BACKEND_URL = import.meta.env.BACKEND_URL
-
 interface AuthProps {
     onClose: () => void;
     toggleMode: () => void; // New prop to toggle to Signup
@@ -35,7 +32,7 @@ export function Signin({ onClose, toggleMode }: AuthProps) {
         setLoading(true)
 
         try {
-            const response : responseProps = await axios.post(`${BACKEND_URL}/api/v1/signin`, {
+            const response : responseProps = await axios.post(`/api/v1/signin`, {
                 email: email,
                 password: password
             })
