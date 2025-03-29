@@ -3,11 +3,10 @@ import { motion } from "framer-motion";
 import { Share2, Twitter, Youtube, FileText, Trash2, Link2, Instagram } from "lucide-react";
 import { useEffect } from "react";
 import { toast } from "react-toastify";
-import dotenv from "dotenv"
-dotenv.config()
 
 
-const BACKEND_URL = process.env.BACKEND_URL
+
+const BACKEND_URL = import.meta.env.BACKEND_URL
 
 interface CardProps {
   title: string;

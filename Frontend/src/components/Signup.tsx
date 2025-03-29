@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { Mail, Lock, User } from 'lucide-react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import dotenv from "dotenv"
-dotenv.config()
 
 
-const BACKEND_URL = process.env.BACKEND_URL
+
+const BACKEND_URL = import.meta.env.BACKEND_URL
 
 interface AuthProps {
   onClose: () => void;

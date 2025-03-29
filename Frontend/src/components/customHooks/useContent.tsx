@@ -1,10 +1,9 @@
 import axios from "axios"
 import { useCallback, useState } from "react"
-import dotenv from "dotenv"
-dotenv.config()
 
 
-const BACKEND_URL = process.env.BACKEND_URL
+
+const BACKEND_URL = import.meta.env.BACKEND_URL
 
 interface contentTypeProps {
     title: string,
