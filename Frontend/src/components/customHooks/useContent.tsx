@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useCallback, useState } from "react"
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
 
 
@@ -28,7 +29,7 @@ export function useContent() {
         try {
 
             
-            const response: responseProps = await axios.get(`/api/v1/content`, {
+            const response: responseProps = await axios.get(`${BACKEND_URL}/api/v1/content`, {
                 withCredentials: true
             })
 
