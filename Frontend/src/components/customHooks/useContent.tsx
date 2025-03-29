@@ -31,7 +31,7 @@ export function useContent() {
         try {
 
             
-            const response: responseProps = await axios.get(`${BACKEND_URL}api/v1/content`, {
+            const response: responseProps = await axios.get(`${BACKEND_URL}/api/v1/content`, {
                 withCredentials: true
             })
 
