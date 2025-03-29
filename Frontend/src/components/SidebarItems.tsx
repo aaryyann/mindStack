@@ -7,7 +7,7 @@ interface SidebarItemsProps {
 export const SidebarItems = ({icon , iconName} : SidebarItemsProps) => {
     return(
         <>
-        <div className="flex gap-4 p-2 hover:bg-gray-200 rounded-md">
+        <div className="flex gap-4 p-2 hover:bg-gray-200 rounded-md text-white hover:text-black">
             <div>{icon}</div>
             <div className="text-md font-medium font-sans">{iconName}</div>
         </div>

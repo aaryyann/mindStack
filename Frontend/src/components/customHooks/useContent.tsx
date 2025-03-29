@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 interface contentTypeProps {
     title: string,
@@ -22,7 +22,7 @@ export function useContent() {
     const [error, setError] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(true);
 
-    async function refreshContent() {
+    const refreshContent = useCallback(async () =>{
         try {
 
             
@@ -44,7 +44,7 @@ export function useContent() {
             setIsLoading(false)
         }
         
-    }
+    }, []) 
 
 
     return { data, refreshContent, error, isLoading }
