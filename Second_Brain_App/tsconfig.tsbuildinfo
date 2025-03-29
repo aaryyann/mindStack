@@ -1,1 +1,1 @@
-{"root":["./@types/express/index.d.ts","./src/db.ts","./src/index.ts","./src/middleware.ts"],"version":"5.7.3"}
+{"root":["./src/db.ts","./src/index.ts","./src/middleware.ts"],"version":"5.7.3"}
