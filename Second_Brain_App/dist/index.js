@@ -96,6 +96,11 @@ app.post("/api/v1/signin", function (req, res) {
                 const token = jsonwebtoken_1.default.sign({
                     id: existinguser._id,
                 }, JWT_SECRET);
+                res.cookie("token", token, {
+                    httpOnly: true,
+                    secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+                    sameSite: "strict"
+                });
                 res.status(200).json({
                     token: token
                 });
