@@ -100,7 +100,8 @@ app.post("/api/v1/signin", function (req, res) {
                     httpOnly: true,
                     secure: true, // Use secure cookies in production
                     sameSite: "none",
-                    maxAge: 3600000
+                    maxAge: 3600000,
+                    path: "/"
                 });
                 res.status(200).json({
                     token: token
