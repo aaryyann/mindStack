@@ -13,14 +13,7 @@ interface AuthProps {
     toggleMode: () => void; // New prop to toggle to Signup
 }
 
-interface responseDataProps{
-    token : string
-}
 
-interface responseProps {
-    data : responseDataProps,
-    status : number
-}
 
 
 export function Signin({ onClose, toggleMode }: AuthProps) {
@@ -35,18 +28,14 @@ export function Signin({ onClose, toggleMode }: AuthProps) {
         setLoading(true)
 
         try {
-            const response : responseProps = await axios.post(`${BACKEND_URL}/api/v1/signin`, {
-                email: email,
-                password: password
-            })
+            const response  = await axios.post(
+                `${BACKEND_URL}/api/v1/signin`,
+                { email, password },
+                { withCredentials: true } // ✅ Necessary for cookies
+            );
 
-
-            if (response.status == 200) {
-                const token = response.data.token
-                if(token){
-                    document.cookie = `token = ${token}`
-                    navigate('/dashboard')
-                }
+            if (response.status === 200) {
+                navigate('/dashboard'); // ✅ Redirect after successful login
             }
         }
         catch (e) {
