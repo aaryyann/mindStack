@@ -29,8 +29,8 @@ const app = (0, express_1.default)();
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.json());
 app.use((0, cors_1.default)({
-    origin: process.env.FRONTEND_URL, // ✅ Allow requests from frontend
-    credentials: true // ✅ Allow cookies & authentication headers
+    origin: process.env.FRONTEND_URL, // frontend
+    credentials: true // cookies 
 }));
 const character = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 let random = (len) => {
