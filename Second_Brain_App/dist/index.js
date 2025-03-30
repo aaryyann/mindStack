@@ -98,7 +98,7 @@ app.post("/api/v1/signin", function (req, res) {
                 }, JWT_SECRET);
                 res.cookie("token", token, {
                     httpOnly: true,
-                    secure: process.env.NODE_ENV === "production", // Use secure cookies in production
+                    secure: true, // Use secure cookies in production
                     sameSite: "none"
                 });
                 res.status(200).json({
