@@ -10,8 +10,8 @@ dotenv_1.default.config();
 const JWT_PASSWORD = process.env.JWT_PASSWORD || "";
 console.log(JWT_PASSWORD);
 const userMiddleware = (req, res, next) => {
-    const cookiest = document.cookie;
-    console.log(cookiest);
+    // const cookiest = document.cookie
+    // console.log(cookiest)
     const token = req.cookies.token;
     console.log(token);
     const decodedInfo = jsonwebtoken_1.default.verify(token, JWT_PASSWORD);
