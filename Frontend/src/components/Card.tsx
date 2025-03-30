@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 
 
 
-const BACKEND_URL = import.meta.env.BACKEND_URL
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL
 
 interface CardProps {
   title: string;
