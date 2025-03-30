@@ -11,6 +11,7 @@ const JWT_PASSWORD = process.env.JWT_PASSWORD || "";
 console.log(JWT_PASSWORD);
 const userMiddleware = (req, res, next) => {
     const token = req.cookies.token;
+    console.log(token);
     const decodedInfo = jsonwebtoken_1.default.verify(token, JWT_PASSWORD);
     if (decodedInfo) {
         req.userId = decodedInfo.id;
